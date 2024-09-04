@@ -1,21 +1,25 @@
 <script setup lang="ts">
+import { onMounted, ref } from 'vue';
+import Header from './components/header/Header.vue';
+import IphoneView from "./components/iphone_view.vue"
+import { simcanvas } from "./lib/canvas"
+
+const canvas = ref<HTMLCanvasElement | null>(null);
+
+onMounted(() => {
+  // set up threejs
+  if (canvas.value) {
+    simcanvas.init(canvas.value);
+  }
+});
 </script>
 
 <template>
-  <button class="btn">btn</button>
+  <div class="absolute top-0 left-0 ">
+    <Header />
+    <IphoneView />
+  </div>
+  <canvas ref="canvas"></canvas>
 </template>
 
-<style scoped>
-/* .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-} */
-</style>
+<style scoped></style>
