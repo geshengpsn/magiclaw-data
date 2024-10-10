@@ -1,8 +1,4 @@
 <script setup lang="ts">
-// import { computed } from 'vue';
-// import { iphone_ws, box_ws } from '../../lib/connection';
-
-// const iphone = iphone_ws();
 
 const props = defineProps({
     status: {

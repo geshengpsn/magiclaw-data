@@ -14,7 +14,6 @@ onMounted(() => {
     <div class=" relative">
         <div class=" absolute">
             <canvas ref="rgb" class="m-4 p-2 rounded-xl">
-
             </canvas>
         </div>
     </div>
